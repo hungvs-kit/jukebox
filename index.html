@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jukebox 曲状況表示</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>🎵 店舗 曲状況表示画面</header>
+
+  <main id="main-content">
+    <section id="current-song">
+      <h2>再生中</h2>
+      <div id="song-info">
+        <p><strong>曲名：</strong><span id="song-title"></span></p>
+        <p><strong>アーティスト名：</strong><span id="artist-name"></span></p>
+        <p><strong>ジャンル：</strong><span id="genre"></span></p>
+        <p><strong>発売日：</strong><span id="release-date"></span></p>
+      </div>
+      <div id="video-container">
+        <video id="current-video" controls autoplay muted playsinline>
+          <source src="" type="video/mp4" />
+          このブラウザは video タグをサポートしていません。
+        </video>
+      </div>
+      <div id="message-box">
+        <p id="message-text">●●</p>
+      </div>
+    </section>
+
+    <section id="next-songs">
+      <h2>次に流れる曲 (9曲まで)</h2>
+      <ul id="next-list"></ul>
+    </section>
+  </main>
+
+  <div id="fastpass-warning" style="display: none;">⚠ Fastpass受付停止中</div>
+  <div id="next-nickname">呼出中：にっくねーむ123</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

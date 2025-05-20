@@ -1,0 +1,173 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', 'Montserrat', sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  user-select: none;
+  overflow: hidden; /* loại bỏ scroll */
+}
+header {
+  background: #3f51b5;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+}
+
+#main-content {
+  display: flex;
+  height: calc(100vh - 72px); /* header + bottom info */
+  padding: 16px;
+  gap: 20px;
+}
+
+/* Left panel - current song */
+#current-song {
+  flex: 0 0 60%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#current-song h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+#song-info p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+#song-info strong {
+  color: #555;
+}
+#video-container {
+  width: 100%;
+  max-width: 600px; /* hoặc theo bạn */
+  height: 340px;    /* chiều cao cố định */
+  background-color: #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#current-video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: black;
+}
+
+/* Message box */
+#message-box {
+  margin-top: 16px;
+  padding: 12px;
+  background: #e0e7ff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3f51b5;
+  user-select: text;
+}
+
+/* Right panel - next songs */
+#next-songs {
+  flex: 0 0 40%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#next-songs h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #3f51b5;
+}
+
+/* List of songs */
+#next-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.song-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 16px;
+  user-select: none;
+}
+.song-item:hover {
+  background-color: #f0f4ff;
+}
+.song-item.selected {
+  background-color: #c5cae9;
+  font-weight: 700;
+  color: #1a237e;
+}
+.song-item .index {
+  width: 24px;
+  font-weight: 700;
+  color: #3f51b5;
+}
+.song-item .title {
+  flex: 1;
+  margin-left: 10px;
+}
+.song-item .artist {
+  margin-left: 8px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Fastpass badge */
+.song-item .fastpass {
+  margin-left: 10px;
+  color: #d32f2f;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Fastpass warning */
+#fastpass-warning {
+  background-color: #ffebee;
+  color: #d32f2f;
+  font-weight: 700;
+  padding: 10px 16px;
+  text-align: center;
+  margin-top: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* 呼出中 nickname */
+#next-nickname {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #3f51b5;
+  user-select: text;
+}
