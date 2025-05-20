@@ -1,173 +1,196 @@
-/* Reset & base */
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
-  font-family: 'Noto Sans JP', 'Montserrat', sans-serif;
-  background: #f7f7f7;
-  color: #222;
-  user-select: none;
-  overflow: hidden; /* loại bỏ scroll */
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
 }
+
 header {
-  background: #3f51b5;
+  background-color: #3f51b5;
   color: #fff;
-  font-weight: 700;
-  font-size: 24px;
-  padding: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 20px;
   text-align: center;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-#main-content {
-  display: flex;
-  height: calc(100vh - 72px); /* header + bottom info */
+main {
   padding: 16px;
-  gap: 20px;
 }
 
-/* Left panel - current song */
-#current-song {
-  flex: 0 0 60%;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
-  padding: 24px;
+.controls {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-#current-song h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #3f51b5;
-}
-#song-info p {
-  font-size: 18px;
-  margin: 8px 0;
-}
-#song-info strong {
-  color: #555;
-}
-#video-container {
-  width: 100%;
-  max-width: 600px; /* hoặc theo bạn */
-  height: 340px;    /* chiều cao cố định */
-  background-color: #000;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-#current-video {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  background-color: black;
-}
-
-/* Message box */
-#message-box {
-  margin-top: 16px;
-  padding: 12px;
-  background: #e0e7ff;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 16px;
-  color: #3f51b5;
-  user-select: text;
-}
-
-/* Right panel - next songs */
-#next-songs {
-  flex: 0 0 40%;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
-  overflow-y: auto;
-}
-
-#next-songs h2 {
-  font-size: 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 16px;
-  color: #3f51b5;
 }
 
-/* List of songs */
-#next-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.song-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 12px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 16px;
-  user-select: none;
-}
-.song-item:hover {
-  background-color: #f0f4ff;
-}
-.song-item.selected {
-  background-color: #c5cae9;
-  font-weight: 700;
-  color: #1a237e;
-}
-.song-item .index {
-  width: 24px;
-  font-weight: 700;
-  color: #3f51b5;
-}
-.song-item .title {
-  flex: 1;
-  margin-left: 10px;
-}
-.song-item .artist {
-  margin-left: 8px;
-  color: #555;
-  font-style: italic;
-}
-
-/* Fastpass badge */
-.song-item .fastpass {
-  margin-left: 10px;
-  color: #d32f2f;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-/* Fastpass warning */
-#fastpass-warning {
-  background-color: #ffebee;
-  color: #d32f2f;
-  font-weight: 700;
-  padding: 10px 16px;
-  text-align: center;
-  margin-top: 12px;
+.mode-btn {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 8px;
   border-radius: 6px;
-  font-size: 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-/* 呼出中 nickname */
-#next-nickname {
-  margin-top: 12px;
+.mode-btn:hover {
+  background-color: #d0d0d0;
+}
+
+.mode-btn.active {
+  background-color: #3f51b5;
+  color: white;
+}
+
+#new-register {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#new-register:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
   text-align: center;
-  font-weight: 700;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f0f0f0;
+  color: #444;
+  font-weight: bold;
+}
+
+td button {
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.start-btn {
+  background-color: #2196f3;
+  color: white;
+}
+.stop-btn {
+  background-color: #f57c00;
+  color: white;
+}
+.del-btn {
+  background-color: #e53935;
+  color: white;
+}
+
+td button:hover {
+  opacity: 0.9;
+}
+
+#register-page h3 {
+  margin-top: 0;
   font-size: 18px;
   color: #3f51b5;
-  user-select: text;
+}
+
+#search-code {
+  margin-bottom: 20px;
+}
+
+#search-code select {
+  padding: 8px;
+  font-size: 14px;
+  width: 80%;
+  max-width: 400px;
+  margin-right: 8px;
+}
+
+#search-code button {
+  padding: 8px 14px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#search-result table {
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  border-collapse: collapse;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+#search-result th {
+  background-color: #f7f7f7;
+  padding: 8px;
+}
+
+#search-result td {
+  padding: 8px;
+  font-size: 14px;
+}
+
+#submit-btn {
+  margin-top: 12px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#submit-btn:hover {
+  background-color: #43a047;
+}
+
+.back-button {
+  padding: 10px 20px;
+}
+
+.back-button a {
+  display: inline-block;
+  background-color: #ccc;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button a:hover {
+  background-color: #aaa;
 }

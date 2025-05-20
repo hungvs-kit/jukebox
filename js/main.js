@@ -129,12 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
         li.classList.add("selected"); // đánh dấu bài tiếp theo gần nhất
       }
 
-      li.innerHTML = `
+        li.innerHTML = `
         <span class="index">${i}</span>
-        <span class="title">${song.title}</span>
-        <span class="artist">(${song.artist})</span>
-        ${song.fastpass ? '<span class="fastpass">🔥</span>' : ''}
-      `;
+        <div class="song-info">
+            <span class="title">${song.title}</span>
+            <span class="artist">(${song.artist})</span>
+            ${song.fastpass ? '<span class="fastpass">🔥</span>' : ''}
+        </div>
+        `;
 
       // Bấm bài kế tiếp sẽ chuyển bài đang phát
       li.addEventListener("click", () => {

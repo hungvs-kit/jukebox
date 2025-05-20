@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>店舗曲管理端末</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/tablet.js"></script>
+</head>
+<body>
+  <header>📱 店舗曲管理端末</header>
+  <div class="back-button">
+  <a href="index-demo.html">🔙 戻る</a>
+</div>
+
+  <main id="tablet-panel">
+    <div class="controls">
+      <div>
+        <button id="mode-normal" class="mode-btn active">ノーマル</button>
+        <button id="mode-random" class="mode-btn">ランダム</button>
+      </div>
+      <div>
+        <a href="register.html">
+          <button id="new-register">新規登録 +</button>
+        </a>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>状態</th><th>曲名</th><th>アーティスト</th><th>JukeBox名</th><th>番号</th>
+          <th>FastPass</th><th>登録日時</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="song-table-body"></tbody>
+    </table>
+  </main>
+</body>
+</html>

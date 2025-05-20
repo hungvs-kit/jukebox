@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>新規登録</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/mock-db.js"></script> <!-- Load DB trước -->
+  <script defer src="js/register.js"></script>
+</head>
+<body>
+  <header>🎼 JukeBoxDreams管理システム</header>
+
+  <main id="register-page">
+    <p>店舗管理 &gt; 新規登録</p>
+
+    <h3>曲を選択してください</h3>
+    <div id="search-code">
+      <label for="song-code">曲番号を選択：</label>
+      <select id="song-code">
+        <option value="">-- 曲を選択 --</option>
+      </select>
+      <button id="search-btn">検索する</button>
+    </div>
+
+    <div id="search-result" style="display:none; margin-top: 16px;">
+      <h4>この曲でよろしいですか？</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>曲名</th><th>アーティスト</th><th>ジャンル</th>
+            <th>発売日</th><th>JukeBox番号</th><th>JukeBox名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="r-title">●●</td>
+            <td id="r-artist">●●</td>
+            <td id="r-genre">●●</td>
+            <td id="r-date">●●</td>
+            <td id="r-code">●●</td>
+            <td id="r-jukebox">●●</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <label>
+          <input type="checkbox" id="fastpass-check" />
+          FastPassに設定する
+        </label>
+      </p>
+      <button id="submit-btn">登録する</button>
+    </div>
+  </main>
+</body>
+</html>
